@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <style>
+    table, th, td {
+  border: 1px solid black;
+}
+    #bt {
+    color: black;
+    font-size: 18px;
+    border-style: inset;
+    }
+  </style>
+</head>
+<script>  
+  function validation()  
+  {  
+  var x=document.form.email.value;  
+  var atposition=x.indexOf("@");  
+  var dotposition=x.lastIndexOf("."); 
+  var num=document.form.mobile.value;
+  var password=document.form.pass.value; 
+  var password1=document.form.pwd.value;  
+  if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+    alert("Please enter a valid e-mail address");  
+    return false;  
+    }  
+  else if (isNaN(num)){ 
+  alert("Enter Numeric value only");  
+  return false;  
+}
+else if (num.length>10){ 
+  alert("Enter a valid mobile number");  
+  return false;  
+}
+else if(password.length<8){  
+  alert("Password must be at least 8 characters long.");  
+  return false;  
+  }  
+else if(password != password1){ 
+  alert("Passwords didn't match");
+return false;  
+}  
+  else {
+    return true;
+  }
+  }  
+  </script>  
+<body>
+<form name="form" method="post" action="#" onsubmit="return validation();">
+    <h1 style="text-align: center"> <b> <u> Login Form </u> </b> </h1> <br>
+    <table align="center">
+      <tr>
+        <th> <label for ="name"> User Name: </label> </th>
+    <td><input type="text" name="name" placeholder="Enter your name" required></td>
+    </tr>
+    <tr>
+      <th> <label for ="email"> Email: </label> </th>
+    <td> <input type="text" name="email" placeholder="Enter your email-id" required></td>
+    </tr>
+    <tr>
+    <th><label for ="mobile"> Mobile No: </label> </th>
+    <td> <input type="text" name="mobile" id="numloc" placeholder="Enter your mobile no." required></td>
+    </tr>
+    <tr>
+    <th><label for ="pass"> Password: </label></th>
+    <td><input type="password" name="pass" placeholder="Enter a Password" required> </td>
+    </tr>
+    <tr>
+    <th><label for ="pwd"> Confirm Password: </label> </th>
+    <td><input type="password" name="pwd" placeholder="Re-enter your password" required></td>
+    </tr>
+    <tr>
+      <th colspan="2"><input type="submit" name="submit" value="LOGIN" id="bt"></th> 
+    </tr>
+</table>
+</form>
+</body>
+</html>
