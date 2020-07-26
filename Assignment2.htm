@@ -32,7 +32,7 @@
   alert("Enter Numeric value only");  
   return false;  
 }
-else if (num.length>10){ 
+else if (num.length>10 || num.length<10){ 
   alert("Enter a valid mobile number");  
   return false;  
 }
@@ -50,7 +50,7 @@ return false;
   }  
   </script>  
 <body>
-<form name="form" method="post" action="#" onsubmit="return validation();">
+<form name="form" method="post" onsubmit="return validation();">
     <h1 style="text-align: center"> <b> <u> Login Form </u> </b> </h1> <br>
     <table align="center">
       <tr>
